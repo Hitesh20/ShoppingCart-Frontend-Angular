@@ -1,1 +1,184 @@
-<p>user-cart works!</p>
+<div class="container-fluid bg-light pb-5">
+
+
+  <h1 class="font1 text-center p-5 text-warning m-4">My Shopping Bag</h1>
+
+
+  <div class="container">
+
+    <div class="row">
+
+
+      <div class="bg-light mr-2 col-8">
+
+
+        <!--Product detail in bag-->
+        <div class="cart bg-light">
+          
+          <div class="row">
+            
+            <div class="col-3 m-2">
+              <img src="../../assets/Images/temp_Bag_img.jfif" height="185" width="150" class="img-thumbnail">
+            </div>
+            <div class="col-8 m-2">
+              <div><h4 class="font2">Men's Gray Blue Pattern 1</h4></div>
+              <div><b>Quantity :-</b>&nbsp;
+              <button class="btn btn-outline-warning bg-white">-&nbsp;</button>
+              &nbsp;<span class="badge badge-light">2</span>&nbsp;
+                <button class="btn btn-outline-warning bg-white">+&nbsp;</button></div>
+              <div><b>Price&nbsp;<i class="fa p-1">&#xf02b;</i>:-</b>&nbsp;<i class="fa p-1">&#xf156;</i><span class="font-weight-">700</span></div><hr>
+              <button class="btn btn-danger">Remove</button>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!--Product 2-->
+        <div class="cart bg-light">
+
+          <div class="row">
+
+            <div class="col-3 m-2">
+              <img src="../../assets/Images/temp_Bag_img.jfif" height="185" width="150" class="img-thumbnail">
+            </div>
+            <div class="col-8 m-2">
+              <div><h4 class="font2">Men's Gray Blue Pattern 1</h4></div>
+              <div><b>Quantity :-</b>&nbsp;
+                <button class="btn btn-outline-warning bg-white">-&nbsp;</button>
+                &nbsp;<span class="badge badge-light">2</span>&nbsp;
+                <button class="btn btn-outline-warning bg-white">+&nbsp;</button></div>
+              <div><b>Price&nbsp;<i class="fa p-1">&#xf02b;</i>:-</b>&nbsp;<i class="fa p-1">&#xf156;</i><span class="font-weight-">700</span></div><hr>
+              <button class="btn btn-danger">Remove</button>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="bg-light ml-2 col-3 place_order">
+
+        <h3 class="font2 text-danger font-weight-bolder mb-4">Price Details</h3>
+
+
+        <!--Bag total-->
+        <div class="row mb-2">
+          <div class="col-8">
+            <div>Your Bag's Total:-</div>
+          </div>
+          <div class="col-4">
+            <div><i class="fa p-1">&#xf156;</i><span class="font-weight-bold">1400</span></div>
+          </div>
+        </div>
+
+
+        <!--TAX-->
+
+        <div class="row mb-2">
+          <div class="col-8">
+            <div>Tax </div>
+          </div>
+          <div class="col-4">
+            <div><i class="fa p-1">&#xf156;</i><span class="font-weight-bold">300</span></div>
+          </div>
+        </div>
+
+
+        <hr>
+
+
+        <!--Total-->
+
+        <div class="row mb-4">
+          <div class="col-8">
+            <div class="font-weight-bold">Total </div>
+          </div>
+          <div class="col-4">
+            <div><i class="fa p-1">&#xf156;</i><span class="font-weight-bold">1700</span></div>
+          </div>
+        </div>
+
+
+        <!--Place Order-->
+
+
+        <div class="row">
+          <div class="col-12">
+            <a type="submit" class="btn btn-success text-white w-100" href="#add_Address">ADD ADDRESS</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!--Shipping Details-->
+<div class="container-fluid bg-light pt-5" >
+
+  <div class="container bg-light">
+
+    <h1 class="font1 text-center p-5 text-warning m-4" id="add_Address">Shipping Details</h1>
+
+
+    <form action="login" class="is-validated">
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="pincode" placeholder="Pin Code" name="pincode" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="address" placeholder="Full Address" name="address" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="number" placeholder="Mobile Number(for order status update)" name="pswd" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <b class="ml-1">Address Type:- </b>&nbsp;
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="addType" checked>Home
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="addType">Office
+        </label>
+      </div>
+      <button type="submit" class="btn btn-info mt-5 mb-5 w-100">PLACE ORDER</button>
+    </form>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+</div>
+
+
+<app-footer></app-footer>

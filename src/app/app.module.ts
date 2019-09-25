@@ -8,6 +8,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { UserCartComponent } from './user-cart/user-cart.component';
     NavbarComponent,
     ProductListComponent,
     ProductDetailComponent,
-    UserCartComponent
+    UserCartComponent,
+    LoginComponent,
+    RegistrationComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
