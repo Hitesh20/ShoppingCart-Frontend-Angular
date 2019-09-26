@@ -1,1 +1,11 @@
-<p>product-detail works!</p>
+<p>product-detail works! You selected {{productId}}</p>
+{{str}}
+<div class="card m-2" style="width:200px">
+  <img class="card-img-top" src="{{product.image}}" alt="Card image" height="150px" width="20px">
+  <div class="card-body bg-white">
+    <h4 class="card-title">{{product.name}}</h4>
+    <p class="card-text"><i class="fa p-1">&#xf156;</i>{{product.price}}</p>
+    <button class="btn btn-success btn-sm">Buy</button>&nbsp;&nbsp;
+    <button class="btn btn-success btn-sm">See Product</button>
+  </div>
+</div>

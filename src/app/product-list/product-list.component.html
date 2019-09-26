@@ -1,1 +1,109 @@
-<p>product-list works!</p>
+<div class="container-fluid grad" >
+
+  <div class="row grad" >
+
+    <div class="col-2 m-2">
+
+      <h5 class="text-success pt-5">Sort By Price (<i class="fa p-1">&#xf156;</i>)</h5>
+      <div class="side_filter mt-4">
+        <div class="container-fluid ">
+
+          <div class="row mb-2 mt-2">
+            <div class="col-4">
+              <input type="checkbox" name="filter">
+            </div>
+            <div class="col-8">
+              0 - 500
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-4">
+              <input type="checkbox" name="filter">
+            </div>
+            <div class="col-8">
+              501 - 2000
+            </div>
+          </div>
+
+
+          <div class="row mb-2">
+            <div class="col-4">
+              <input type="checkbox" name="filter">
+            </div>
+            <div class="col-8">
+              2001 - 10000
+            </div>
+          </div>
+
+
+
+          <div class="row mb-2">
+            <div class="col-4">
+              <input type="checkbox" name="filter">
+            </div>
+            <div class="col-8">
+              10000 - 20000
+            </div>
+          </div>
+
+
+          <div class="row mb-2">
+            <div class="col-4">
+              <input type="checkbox" name="filter">
+            </div>
+            <div class="col-8">
+              20001 - 40000
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="col-8 mt-5">
+
+
+      <div class="container-fluid">
+
+        <div class="d-flex flex-wrap p-3">
+          <div class="card m-2" style="width:200px" *ngFor="let product of products">
+            <img class="card-img-top" src="{{product.image}}" alt="Card image" height="150px" width="20px">
+            <div class="card-body bg-white">
+              <h4 class="card-title">{{product.name}}</h4>
+              <p class="card-text"><i class="fa p-1">&#xf156;</i>{{product.price}}</p>
+              <button class="btn btn-success btn-sm">Buy</button>&nbsp;&nbsp;
+              <button (click)="onSelect(product)" class="btn btn-success btn-sm">See Product</button>
+            </div>
+          </div>
+        </div>
+
+
+
+      <!--<div class="row">
+
+        <div class="col-3">
+
+          <div class="card" style="width:400px" *ngFor="let product of products">
+            <img class="card-img-top" src="{{product.image}}" alt="Card image" height="250px" width="100px">
+            <div class="card-body">
+              <h4 class="card-title">{{product.name}}</h4>
+              <p class="card-text">{{product.price}}</p>
+              <a href="#" class="btn btn-primary">See Details</a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>-->
+
+    </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,123 @@
+[
+  {
+  "id": 1,
+  "name": "shoes type 1",
+  "price": 7000,
+  "category": "footwear",
+    "image": "../assets/Images/shoes.png"
+  },{
+  "id": 2,
+  "name": "shoes type 2",
+  "price": 20000,
+  "category": "footwear",
+  "image": "../assets/Images/shoes.png"
+  },{
+  "id": 3,
+  "name": "shoes type 3",
+  "price": 13000,
+  "category": "footwear",
+  "image": "../assets/Images/shoes.png"
+  },{
+  "id": 4,
+  "name": "laptop type 1",
+  "price": 38000,
+  "category": "electronics",
+  "image": "../assets/Images/laptop.png"
+  },{
+  "id": 5,
+  "name": "mobile type 1",
+  "price": 24000,
+  "category": "electronics",
+  "image": "../assets/Images/mobile.png"
+  },{
+  "id": 6,
+  "name": "laptop type 2",
+  "price": 40000,
+  "category": "electronics",
+  "image": "../assets/Images/laptop.png"
+  },{
+  "id": 7,
+  "name": "shoes 4",
+  "price": 2000,
+  "category": "footwear",
+  "image": "../assets/Images/shoes.png"
+  },{
+  "id": 8,
+  "name": "Speaker type 1",
+  "price": 4000,
+  "category": "electronics",
+  "image": "../assets/Images/speaker.png"
+  }, {
+  "id": 9,
+  "name": "Tshirt 1",
+  "price": 400,
+  "category": "clothing",
+  "image": "../assets/Images/temp_Bag_img.jfif"
+  }, {
+  "id": 10,
+  "name": "Tshirt 2",
+  "price": 1200,
+  "category": "clothing",
+  "image": "../assets/Images/temp_Bag_img.jfif"
+  },{
+  "id": 11,
+  "name": "Flotters",
+  "price": 1700,
+  "category": "footwear",
+  "image": "../assets/Images/shoes.png"
+  },{
+  "id": 12,
+  "name": "Shirt 1",
+  "price": 900,
+  "category": "clothing",
+  "image": "../assets/Images/temp_Bag_img.jfif"
+  },{
+  "id": 13,
+  "name": "Shirt type 2",
+  "price": 40000,
+  "category": "clothing",
+  "image": "../assets/Images/temp_Bag_img.jfif"
+  },{
+  "id": 14,
+  "name": "Book 1",
+  "price": 200,
+  "category": "books",
+  "image": "../assets/Images/book.png"
+  },{
+  "id": 15,
+  "name": "Book type 2",
+  "price": 400,
+  "category": "books",
+  "image": "../assets/Images/book.png"
+  },{
+  "id": 16,
+  "name": "Book type 3",
+  "price": 800,
+  "category": "books",
+  "image": "../assets/Images/book.png"
+  }, {
+  "id": 17,
+  "name": "Shirt 3",
+  "price": 2700,
+  "category": "clothing",
+  "image": "../assets/Images/temp_Bag_img.jfif"
+  },{
+  "id": 18,
+  "name": "Headphones",
+  "price": 7000,
+  "category": "electronics",
+  "image": "../assets/Images/speaker.png"
+  },{
+  "id": 19,
+  "name": "Jeans 1",
+  "price": 4000,
+  "category": "clothing",
+  "image": "../assets/Images/temp_Bag_img.jfif"
+  },{
+  "id": 20,
+  "name": "Jeans 2",
+  "price": 4700,
+  "category": "clothing",
+  "image": "../assets/Images/temp_Bag_img.jfif"
+  }
+]
