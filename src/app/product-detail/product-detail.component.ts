@@ -23,15 +23,4 @@ export class ProductDetailComponent implements OnInit {
 
     this.productService.getOneProduct(this.productId).subscribe(data => this.product = data);
   }
-
-  findProduct(id) {
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.products.length; i++) {
-      // tslint:disable-next-line:triple-equals
-      if (id == this.products[i].id) {
-        this.product = this.products[i];
-      }
-    }
-
-  }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {__param} from 'tslib';
+import {ProductsService} from '../products.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  private category;
   constructor() { }
 
   ngOnInit() {

@@ -12,7 +12,8 @@ export const MAIN_ROUTES: Routes = [
   { path : 'registration', component: RegistrationComponent },
   { path : 'login', component: LoginComponent },
   { path : 'cart', component: UserCartComponent },
-  { path : 'products', component: ProductListComponent },
+  { path : 'products/:category', component: ProductListComponent },
   { path : 'product-detail/:id', component: ProductDetailComponent },
+
 ];
 

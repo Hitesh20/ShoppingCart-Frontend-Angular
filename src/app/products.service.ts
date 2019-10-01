@@ -15,7 +15,7 @@ export class ProductsService {
   private url = 'http://localhost:2019';
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-  getAllProducts(): Observable<ProductClass[]> {
+  getAllProducts(all: string): Observable<ProductClass[]> {
     return this.http.get<ProductClass[]>(this.url + '/products');
   }
 
@@ -23,4 +23,9 @@ export class ProductsService {
   getOneProduct(id: Number) {
     return this.http.get<ProductClass>(this.url + '/product-detail/' + id);
   }
+
+  getProductsOfCategory(category: string) {
+    return this.http.get<ProductClass[]>(this.url + '/productsFrom/' + category);
+  }
 }
+
