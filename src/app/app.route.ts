@@ -13,6 +13,6 @@ export const MAIN_ROUTES: Routes = [
   { path : 'login', component: LoginComponent },
   { path : 'cart', component: UserCartComponent },
   { path : 'products', component: ProductListComponent },
-  { path : 'products/:id', component: ProductDetailComponent },
+  { path : 'product-detail/:id', component: ProductDetailComponent },
 ];
 

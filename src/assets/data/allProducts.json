@@ -4,7 +4,8 @@
   "name": "shoes type 1",
   "price": 7000,
   "category": "footwear",
-    "image": "../assets/Images/shoes.png"
+    "image": "../assets/Images/shoes.png",
+    "details": "Out of your range BUOY...!!"
   },{
   "id": 2,
   "name": "shoes type 2",

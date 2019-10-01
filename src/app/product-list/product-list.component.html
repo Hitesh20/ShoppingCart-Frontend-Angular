@@ -1,109 +1,59 @@
-<div class="container-fluid grad" >
 
-  <div class="row grad" >
+<div class="container-fluid bg-light d-flex">
 
-    <div class="col-2 m-2">
 
-      <h5 class="text-success pt-5">Sort By Price (<i class="fa p-1">&#xf156;</i>)</h5>
-      <div class="side_filter mt-4">
-        <div class="container-fluid ">
-
-          <div class="row mb-2 mt-2">
-            <div class="col-4">
-              <input type="checkbox" name="filter">
+      <div class="bg-white ml-1 mr-1 mt-4 position-fixed" style="width:24%;">
+        <h2 class="text-left ml-4 text-success font1 mt-3">Filters</h2>
+        <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
+        <div class="">
+          <h6 class=" text-left ml-4 mt-3">CATEGORIES</h6>
+          <form class="text-left ml-5 mt-3">
+            <div class="checkbox mb-2">
+              <label class="form-check-label"><input type="checkbox" class="mr-1 form-check-input">Clothing</label>
             </div>
-            <div class="col-8">
-              0 - 500
+            <div class="checkbox mb-2">
+              <label class="form-check-label"><input type="checkbox" class="mr-1  form-check-input" value="">Footwear</label>
             </div>
-          </div>
-
-          <div class="row mb-2">
-            <div class="col-4">
-              <input type="checkbox" name="filter">
+            <div class="checkbox disabled mb-2">
+              <label class="form-check-label"><input type="checkbox" class="mr-1 form-check-input" value="">Electronics</label>
             </div>
-            <div class="col-8">
-              501 - 2000
+            <div class="checkbox disabled mb-2">
+              <label class="form-check-label"><input type="checkbox" class="mr-1 form-check-input" value="" >Books</label>
             </div>
-          </div>
-
-
-          <div class="row mb-2">
-            <div class="col-4">
-              <input type="checkbox" name="filter">
-            </div>
-            <div class="col-8">
-              2001 - 10000
-            </div>
-          </div>
-
-
-
-          <div class="row mb-2">
-            <div class="col-4">
-              <input type="checkbox" name="filter">
-            </div>
-            <div class="col-8">
-              10000 - 20000
-            </div>
-          </div>
-
-
-          <div class="row mb-2">
-            <div class="col-4">
-              <input type="checkbox" name="filter">
-            </div>
-            <div class="col-8">
-              20001 - 40000
-            </div>
-          </div>
-
+          </form>
         </div>
-
-
+        <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
+        <h6 class=" text-left mt-3 ml-4">PRICE</h6>
+        <form class="text-left mt-3 ml-4 mb-4">
+          <div class="checkbox">
+            <label ><input type="checkbox" class="mr-1">Below 1000</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" class="mr-1" value="">1000 to 5000</label>
+          </div>
+          <div class="checkbox disabled">
+            <label><input type="checkbox" class="mr-1" value="" >5000 to 10000</label>
+          </div>
+          <div class="checkbox disabled">
+            <label><input type="checkbox" class="mr-1" value="" >10000 and above</label>
+          </div>
+        </form>
       </div>
 
-    </div>
-
-    <div class="col-8 mt-5">
-
-
-      <div class="container-fluid">
-
-        <div class="d-flex flex-wrap p-3">
-          <div class="card m-2" style="width:200px" *ngFor="let product of products">
-            <img class="card-img-top" src="{{product.image}}" alt="Card image" height="150px" width="20px">
+        <div class="d-flex flex-wrap p-1" style="width: 75%; margin-left: auto;">
+          <div class="card my-4 mx-2" style="width:23%;" *ngFor="let product of products">
+            <img class="card-img-top p-2 pt-4" src="{{product.image}}" alt="Card image" height="240px" width=100%>
             <div class="card-body bg-white">
-              <h4 class="card-title">{{product.name}}</h4>
-              <p class="card-text"><i class="fa p-1">&#xf156;</i>{{product.price}}</p>
-              <button class="btn btn-success btn-sm">Buy</button>&nbsp;&nbsp;
-              <button (click)="onSelect(product)" class="btn btn-success btn-sm">See Product</button>
-            </div>
-          </div>
-        </div>
-
-
-
-      <!--<div class="row">
-
-        <div class="col-3">
-
-          <div class="card" style="width:400px" *ngFor="let product of products">
-            <img class="card-img-top" src="{{product.image}}" alt="Card image" height="250px" width="100px">
-            <div class="card-body">
-              <h4 class="card-title">{{product.name}}</h4>
-              <p class="card-text">{{product.price}}</p>
-              <a href="#" class="btn btn-primary">See Details</a>
+              <div><b class="card-title my-4">{{product.name}}</b></div>
+              <p class="card-text"><i class="fa my-3">&#xf156;</i>{{product.price}}</p>
+              <button class="btn btn-success btn-sm">Add to Cart</button>&nbsp;&nbsp;
+              <button (click)="seeDetails(product)" class="btn btn-success btn-sm">See Product</button>
             </div>
           </div>
 
 
-        </div>
-
-      </div>-->
-
     </div>
 
     </div>
+<app-footer></app-footer>
 
-  </div>
-</div>

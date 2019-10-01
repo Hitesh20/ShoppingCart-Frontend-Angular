@@ -13,12 +13,15 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductsService, private router: Router, private route: ActivatedRoute) { }
 
   public products;
+
+  public prod;
   ngOnInit() {
     this.productService.getAllProducts().subscribe(data => this.products = data);
 
   }
 
-  onSelect(product) {
-    this.router.navigate([product.id], {relativeTo: this.route});
+  seeDetails(product) {
+    this.router.navigate(['product-detail', product.productId]);
+
   }
 }

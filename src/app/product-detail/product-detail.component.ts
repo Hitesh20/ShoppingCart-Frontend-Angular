@@ -15,19 +15,19 @@ export class ProductDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private productService: ProductsService) { }
 
   ngOnInit() {
-    this.productService.getAllProducts().subscribe(data => this.products = data);
     this.route.paramMap.subscribe((params: ParamMap) => {
       // tslint:disable-next-line:radix
       const id = parseInt(params.get('id'));
       this.productId = id;
-      this.findProduct(this.productId);
     });
+
+    this.productService.getOneProduct(this.productId).subscribe(data => this.product = data);
   }
 
   findProduct(id) {
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.products.length; i++) {
-      // tslint:disable-next-line:no-unused-expression triple-equals
+      // tslint:disable-next-line:triple-equals
       if (id == this.products[i].id) {
         this.product = this.products[i];
       }
