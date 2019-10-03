@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {__param} from 'tslib';
 import {ProductsService} from '../products.service';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ import {ProductsService} from '../products.service';
 export class NavbarComponent implements OnInit {
 
   private category;
-  constructor() { }
+  constructor(private loginService: AuthenticationService) { }
 
   ngOnInit() {
   }

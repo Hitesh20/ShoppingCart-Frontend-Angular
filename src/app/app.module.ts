@@ -12,8 +12,14 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FooterComponent } from './footer/footer.component';
 import {ProductsService} from './products.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
+import { BasicAuthHttpInterceptorService} from './basic-auth-http-interceptor.service';
+import {AuthguardService} from './authguard.service';
+import {AuthenticationService} from './authentication.service';
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +31,21 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     RegistrationComponent,
     FooterComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [ProductsService],
+  providers: [
+    /*{
+      provide: HTTP_INTERCEPTORS, useClass: BasicAuthHttpInterceptorService, multi: true
+    },*/ ProductsService
+    ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+}

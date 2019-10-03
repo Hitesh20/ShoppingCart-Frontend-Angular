@@ -18,36 +18,24 @@ export class ProductListComponent implements OnInit {
   private allProducts;
   public prod;
 
-  /*ngOnChanges() {
-    this.productService.getAllProducts().subscribe(data => this.products = data);
-  }*/
-
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       const cat = params.get('category');
       this.category = cat;
       if (this.category === 'all') {
-        this.productService.getAllProducts(this.category).subscribe(data => this.products = data);
+        this.productService.getAllProducts().subscribe(data => this.products = data);
       } else {
         this.productService.getProductsOfCategory(this.category).subscribe(data => this.products = data);
       }
     });
   }
-
-  // tslint:disable-next-line:use-lifecycle-interface
-  /*ngDoCheck() {
-    this.productService.getAllProducts().subscribe(data => this.products = data);
-
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      const cat = params.get('category');
-      this.category = cat;
-      this.productService.getProductsOfCategory(this.category).subscribe(data => this.products = data);
-    });
-
-  }*/
-
   seeDetails(product) {
     this.router.navigate(['product-detail', product.productId]);
-
+  }
+  goTo(category) {
+    this.router.navigate(['products', category]);
+  }
+  filterByPrice(price1, price2) {
+    this.productService.getProductsOfCategoryAndPrice(this.category, price1, price2).subscribe(data => this.products = data);
   }
 }

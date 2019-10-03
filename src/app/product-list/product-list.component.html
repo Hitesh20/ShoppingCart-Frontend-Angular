@@ -7,35 +7,51 @@
         <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
         <div class="">
           <h6 class=" text-left ml-4 mt-3">CATEGORIES</h6>
-          <form class="text-left ml-5 mt-3">
-            <div class="checkbox mb-2">
-              <label class="form-check-label"><input type="checkbox" class="mr-1 form-check-input">Clothing</label>
+          <form class="form-check text-left ml-5 mt-3">
+            <div class="mb-2">
+              <label class="form-check-label" for="clothing">
+                <input type="radio" id="clothing" class="form-check-input" name="category" (click)="goTo('clothing')">Clothing
+              </label>
             </div>
-            <div class="checkbox mb-2">
-              <label class="form-check-label"><input type="checkbox" class="mr-1  form-check-input" value="">Footwear</label>
+            <div class="mb-2">
+              <label class="form-check-label" for="footwear">
+                <input type="radio" class="form-check-input" id="footwear" name="category" (click)="goTo('footwear')">Footwear
+              </label>
             </div>
-            <div class="checkbox disabled mb-2">
-              <label class="form-check-label"><input type="checkbox" class="mr-1 form-check-input" value="">Electronics</label>
+            <div class="custom-radio mb-2">
+              <label class="form-check-label" for="electronics">
+                <input type="radio" class="form-check-input" id="electronics" name="category" (click)="goTo('electronics')">Electronics
+              </label>
             </div>
-            <div class="checkbox disabled mb-2">
-              <label class="form-check-label"><input type="checkbox" class="mr-1 form-check-input" value="" >Books</label>
+            <div class="custom-radio mb-2">
+              <label class="form-check-label" for="books">
+                <input type="radio" class="form-check-input"  id="books" name="category" (click)="goTo('books')">Books
+              </label>
             </div>
           </form>
         </div>
         <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
         <h6 class=" text-left mt-3 ml-4">PRICE</h6>
-        <form class="text-left mt-3 ml-4 mb-4">
-          <div class="checkbox">
-            <label ><input type="checkbox" class="mr-1">Below 1000</label>
+        <form class="form-check text-left mt-3 ml-4 mb-4">
+          <div class="custom-radio mb-2">
+            <label class="form-check-label">
+              <input type="radio" class="mr-1" name="range" (click)="filterByPrice(0, 1000)">Below 1000
+            </label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox" class="mr-1" value="">1000 to 5000</label>
+          <div class="custom-radio mb-2">
+            <label class="form-check-label">
+              <input type="radio" name="range" class="mr-1" (click)="filterByPrice(1001, 5000)">1000 to 5000
+            </label>
           </div>
-          <div class="checkbox disabled">
-            <label><input type="checkbox" class="mr-1" value="" >5000 to 10000</label>
+          <div class="custom-radio mb-2">
+            <label class="form-check-label">
+              <input type="radio" class="mr-1" name="range" (click)="filterByPrice(5001, 10000)">5000 to 10000
+            </label>
           </div>
-          <div class="checkbox disabled">
-            <label><input type="checkbox" class="mr-1" value="" >10000 and above</label>
+          <div class="custom-radio mb-2">
+            <label class="form-check-label">
+              <input type="radio" class="mr-1" name="range" (click)="filterByPrice(10001, 40000)">10000 and above
+            </label>
           </div>
         </form>
       </div>

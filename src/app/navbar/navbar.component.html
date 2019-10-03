@@ -10,12 +10,15 @@
     </form>
   </ul>
   <ul class="nav navbar-nav float-sm-right">
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown" *ngIf="!loginService.isUserLoggedIn()">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa p-1">&#xf007;&nbsp;</i>Profile</a>
       <div class="dropdown-menu">
         <a class="nav-link dropdown-item text-dark" href="login"><i class="fa p-1">&#xf118;&nbsp;</i>Login</a>
         <a class="nav-link dropdown-item text-dark" href="registration"><i class="fa p-1">&#xf2bb;&nbsp;</i>Sign Up</a>
       </div>
+    </li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn()">
+      <a class="nav-link" href="logout">Logout</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="cart"><i class="fa p-1">&#xf290;&nbsp;</i>Bag</a>
@@ -36,16 +39,16 @@
       <a class="nav-link" routerLink="products/all"><i class="fa p-1">&#xf111;</i>&nbsp;All Products</a>
     </li>
     <li class="nav-item pr-5">
-      <a class="nav-link" href="products/clothing"><i class="fa p-1">&#x553;</i>&nbsp;Clothing</a>
+      <a class="nav-link" routerLink="products/clothing"><i class="fa p-1">&#x553;</i>&nbsp;Clothing</a>
     </li>
     <li class="nav-item pr-5">
-      <a class="nav-link" href="products/footwear"><i class="fa p-1">&#x782;</i>&nbsp;Footwear</a>
+      <a class="nav-link" routerLink="products/footwear"><i class="fa p-1">&#x782;</i>&nbsp;Footwear</a>
     </li>
     <li class="nav-item pr-5">
-      <a class="nav-link" href="products/electronics"><i class="fa p-1">&#xf109;</i>&nbsp;Electronics</a>
+      <a class="nav-link" routerLink="products/electronics"><i class="fa p-1">&#xf109;</i>&nbsp;Electronics</a>
     </li>
     <li class="nav-item pr-5">
-      <a class="nav-link" href="products/books"><i class="fa p-1">&#xf02d;</i>&nbsp;Books</a>
+      <a class="nav-link" routerLink="products/books"><i class="fa p-1">&#xf02d;</i>&nbsp;Books</a>
     </li>
   </ul>
 </nav>
