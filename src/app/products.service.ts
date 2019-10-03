@@ -47,5 +47,14 @@ export class ProductsService {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.http.get<ProductClass[]>(this.url + '/products/' + category + '/' + price1 + '/' + price2, {headers});
   }
+
+  getAllProductsOfPrice(price1: number, price2: number): Observable<ProductClass[]> {
+    const username = 'hiteshmunjal22@gmail.com';
+    const password = 'password';
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.http.get<ProductClass[]>(this.url + '/products/' + price1 + '/' + price2, {headers});
+  }
+
 }
 

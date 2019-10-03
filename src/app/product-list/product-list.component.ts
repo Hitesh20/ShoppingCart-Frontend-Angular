@@ -36,6 +36,10 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['products', category]);
   }
   filterByPrice(price1, price2) {
-    this.productService.getProductsOfCategoryAndPrice(this.category, price1, price2).subscribe(data => this.products = data);
+    if (this.category === 'all') {
+      this.productService.getAllProductsOfPrice(price1, price2).subscribe(data => this.products = data);
+    } else {
+      this.productService.getProductsOfCategoryAndPrice(this.category, price1, price2).subscribe(data => this.products = data);
+    }
   }
 }
