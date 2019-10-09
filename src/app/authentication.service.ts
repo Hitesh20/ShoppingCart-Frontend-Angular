@@ -3,10 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
 export class User {
-  constructor(
-    public status: string,
-  ) {}
-
+  status: string;
 }
 
 
@@ -17,18 +14,18 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  authenticate(username, password) {
+  /*authenticate(username, password) {
     if (username === 'hiteshmunjal22@gmail.com' && password === 'password') {
       sessionStorage.setItem('username', username);
       return true;
     } else {
       return false;
     }
-  }
+  }*/
 
-/*  authenticate(username, password) {
+  authenticate(username, password) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.http.get<User>('http://localhost:2020/validateLogin', {headers}).pipe(
+    return this.http.get('http://localhost:2019/validateLogin', {headers}).pipe(
       map(
         userData => {
           sessionStorage.setItem('username', username);
@@ -37,9 +34,8 @@ export class AuthenticationService {
           return userData;
         }
       )
-
     );
-  }*/
+  }
 
   isUserLoggedIn() {
     const user = sessionStorage.getItem('username');

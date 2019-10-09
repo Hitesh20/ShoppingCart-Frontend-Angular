@@ -4,7 +4,7 @@
   <a class="navbar-brand text-success active font1" href="home">Shopping Site</a>
 
   <ul class="nav navbar-nav float-sm-right m-auto ml-4">
-    <form class="form-inline" action="#">
+    <form class="form-inline">
       <input class="form-control mr-sm-2" size="50" type="text" placeholder="Search for products, brands and more">
       <button class="btn btn-success" type="submit"><i class="fa">&#xf002;</i>&nbsp;Search</button>
     </form>
@@ -18,7 +18,7 @@
       </div>
     </li>
     <li class="nav-item" *ngIf="loginService.isUserLoggedIn()">
-      <a class="nav-link" href="logout">Logout</a>
+      <a class="nav-link" href="logout"><i class="fa p-1">&#xf7d6;&nbsp;</i>Logout</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="cart"><i class="fa p-1">&#xf290;&nbsp;</i>Bag</a>

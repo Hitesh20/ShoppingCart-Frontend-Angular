@@ -18,6 +18,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { BasicAuthHttpInterceptorService} from './basic-auth-http-interceptor.service';
 import {AuthguardService} from './authguard.service';
 import {AuthenticationService} from './authentication.service';
+import {RegistrationService} from './registration.service';
 
 // @ts-ignore
 @NgModule({
@@ -42,7 +43,7 @@ import {AuthenticationService} from './authentication.service';
   providers: [
     /*{
       provide: HTTP_INTERCEPTORS, useClass: BasicAuthHttpInterceptorService, multi: true
-    },*/ ProductsService
+    },*/ ProductsService, RegistrationService
     ],
   bootstrap: [AppComponent]
 })

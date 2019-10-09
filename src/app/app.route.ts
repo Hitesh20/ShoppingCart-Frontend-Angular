@@ -17,7 +17,7 @@ export const MAIN_ROUTES: Routes = [
   { path : 'cart', component: UserCartComponent, canActivate: [AuthguardService]},
   { path : 'products/:category', component: ProductListComponent },
   { path : 'product-detail/:id', component: ProductDetailComponent },
-  { path : 'products/:category/price1/price2', component: ProductDetailComponent },
+  { path : 'products/:category/price1/price2', component: ProductListComponent },
 
 ];
 

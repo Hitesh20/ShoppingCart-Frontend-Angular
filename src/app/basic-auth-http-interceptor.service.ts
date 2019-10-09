@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class BasicAuthHttpInterceptorService /*implements HttpInterceptor*/ {
 
   constructor() { }
-  /*intercept(req: HttpRequest<any>, next: HttpHandler) {
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
     if (sessionStorage.getItem('username') && sessionStorage.getItem('basicAuth')) {
       req = req.clone({
         setHeaders: {
@@ -18,5 +18,5 @@ export class BasicAuthHttpInterceptorService /*implements HttpInterceptor*/ {
       });
     }
     return next.handle(req);
-  }*/
+  }
 }

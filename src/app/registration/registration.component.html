@@ -8,51 +8,50 @@
     <!--Form-->
     <div class="container">
 
+
       <form action="login" class="is-validated">
 
         <div class="form-group">
-          <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" required>
+          <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" [(ngModel)]="user.name" required>
           <div class="valid-feedback">Valid.</div>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="uname" placeholder="Your Email Address" name="email" required>
+          <input type="email" class="form-control" id="uname" placeholder="Your Email Address" name="email" [(ngModel)]="user.email" required>
           <div class="valid-feedback">Valid.</div>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="pwd" placeholder="Choose Password" name="pswd" required>
+          <input type="password" class="form-control" id="pwd" placeholder="Choose Password" name="pswd" [(ngModel)]="user.password" required>
           <div class="valid-feedback">Valid.</div>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="number" placeholder="Mobile Number(for order status update)" name="mob" required>
+          <input type="text" class="form-control" id="number" placeholder="Mobile Number(for order status update)" name="mob" [(ngModel)]="user.mobileNo" required>
           <div class="valid-feedback">Valid.</div>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <b class="ml-1">I'm a:- </b>&nbsp;
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" value="MALE" checked>Male
+            <input type="radio" class="form-check-input" name="gender" value="MALE" [(ngModel)]="user.gender" checked>Male
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" value="FEMALE">Female
+            <input type="radio" class="form-check-input" name="gender" value="FEMALE" [(ngModel)]="user.gender">Female
           </label>
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" value="TRANSGENDER">Transgender
+            <input type="radio" class="form-check-input" name="gender" value="TRANSGENDER" [(ngModel)]="user.gender">Transgender
           </label>
         </div>
-        <button type="submit" class="btn btn-info mt-5 mb-5 w-100">REGISTER</button>
+        <button type="submit" class="btn btn-info mt-5 mb-5 w-100" (click)="createUser()">REGISTER</button>
       </form>
       <div class="pb-5 mr-1">
         <small>Already have an Account?<a href="login">Login here</a></small>
       </div>
-
-
 
     </div>
 
