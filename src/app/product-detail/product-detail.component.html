@@ -18,13 +18,13 @@
       <h4 class="text-black-50 font-weight-bold">Price&nbsp;<i class="fa p-1">&#xf02b;</i>:-</h4>&nbsp;<i class="fa p-1">&#xf156;</i><span class="font-weight-bolder">{{product.price}}</span>
 
       <div><small>Additional tax shall apply, charged at checkout</small></div>
-      <hr class="my-2 py-2">
+      <!--<hr class="my-2 py-2">
       <h4 class="text-black-50 font-weight-bold">Quantity :-</h4>
       <div>
       <button class="btn-outline-warning bg-white btn-lg">-</button>&nbsp;
         <span class="badge-light badge-pill">2</span>&nbsp;
       <button class="btn-outline-warning bg-white btn-lg"> + </button>
-      </div>
+      </div>-->
       <hr class="py-2 my-2">
 
 
@@ -32,7 +32,7 @@
       <p>{{product.details}}</p>
 
       <div class="my-5">
-      <button class="btn-success btn-lg">Add to Bag <i class="fa p-1">&#xf290;&nbsp;</i></button>
+      <button class="btn-success btn-lg" (click)="addThisProductToCart(product.productId)">Add to Bag <i class="fa p-1">&#xf290;&nbsp;</i></button>
       </div>
     </div>
 
