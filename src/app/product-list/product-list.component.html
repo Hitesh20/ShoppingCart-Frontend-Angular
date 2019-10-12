@@ -62,7 +62,7 @@
             <div class="card-body bg-white">
               <div><b class="card-title my-4">{{product.name}}</b></div>
               <p class="card-text"><i class="fa my-3">&#xf156;</i>{{product.price}}</p>
-              <button class="btn btn-success btn-sm">Add to Cart</button>&nbsp;&nbsp;
+              <button class="btn btn-success btn-sm" (click)="addToCart(product.productId)">Add to Cart</button>&nbsp;&nbsp;
               <button (click)="seeDetails(product)" class="btn btn-success btn-sm">See Product</button>
             </div>
           </div>

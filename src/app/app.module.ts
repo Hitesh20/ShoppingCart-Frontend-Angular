@@ -19,6 +19,9 @@ import { BasicAuthHttpInterceptorService} from './basic-auth-http-interceptor.se
 import {AuthguardService} from './authguard.service';
 import {AuthenticationService} from './authentication.service';
 import {RegistrationService} from './registration.service';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import {CartService} from './cart.service';
+import { MyAccountComponent } from './my-account/my-account.component';
 
 // @ts-ignore
 @NgModule({
@@ -33,6 +36,8 @@ import {RegistrationService} from './registration.service';
     RegistrationComponent,
     FooterComponent,
     LogoutComponent,
+    OrderHistoryComponent,
+    MyAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,7 @@ import {RegistrationService} from './registration.service';
   providers: [
     /*{
       provide: HTTP_INTERCEPTORS, useClass: BasicAuthHttpInterceptorService, multi: true
-    },*/ ProductsService, RegistrationService
+    },*/ ProductsService, RegistrationService, CartService
     ],
   bootstrap: [AppComponent]
 })

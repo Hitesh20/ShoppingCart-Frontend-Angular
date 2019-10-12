@@ -17,11 +17,18 @@
         <a class="nav-link dropdown-item text-dark" href="registration"><i class="fa p-1">&#xf2bb;&nbsp;</i>Sign Up</a>
       </div>
     </li>
-    <li class="nav-item" *ngIf="loginService.isUserLoggedIn()">
-      <a class="nav-link" href="logout"><i class="fa p-1">&#xf7d6;&nbsp;</i>Logout</a>
+    <li class="nav-item dropdown" *ngIf="loginService.isUserLoggedIn()">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa p-1">&#xf007;&nbsp;</i>Profile</a>
+      <div class="dropdown-menu">
+        <a class="nav-link dropdown-item text-dark" href="myAccount"><i class="fa p-1">&#xf2bb;&nbsp;</i>My Account</a>
+        <a class="nav-link dropdown-item text-dark" href="logout"><i class="fa p-1">&#xf418;&nbsp;</i>Logout</a>
+      </div>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="cart"><i class="fa p-1">&#xf290;&nbsp;</i>Bag</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="orderHistory"><i class="fa p-1">&#xf297;&nbsp;</i>Order History</a>
     </li>
   </ul>
 </nav>

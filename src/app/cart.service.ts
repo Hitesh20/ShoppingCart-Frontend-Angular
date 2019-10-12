@@ -18,7 +18,6 @@ export class CartService {
 
   showMyCart() {
     const headers = new HttpHeaders( {Authorization: sessionStorage.getItem('basicAuth')});
-    alert(JSON.stringify(headers));
     return this.http.get(this.url + '/showCart', {headers});
   }
 
@@ -30,6 +29,12 @@ export class CartService {
   removeWholeProduct(id) {
     const headers = new HttpHeaders( {Authorization: sessionStorage.getItem('basicAuth')});
     return this.http.get(this.url + '/removeFromCart/' + id, {headers});
+  }
+
+  showOrderHistory() {
+    const headers = new HttpHeaders( {Authorization: sessionStorage.getItem('basicAuth')});
+    return this.http.get(this.url + '/checkout', {headers});
+
   }
 
 }
