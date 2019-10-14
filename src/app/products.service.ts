@@ -47,5 +47,9 @@ export class ProductsService {
     const headers = new HttpHeaders({Authorization: sessionStorage.getItem('basicAuth')});
     return this.http.post<ProductClass>(this.url + '/editProduct' , product, {headers});
   }
+
+  getSearchedResult(searchedItem) {
+    return this.http.get(this.url + '/search/' + searchedItem);
+  }
 }
 

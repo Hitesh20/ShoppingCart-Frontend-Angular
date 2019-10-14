@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container">
 
-  <h1 class="font1 my-3 text-center">Order History</h1>
+  <h1 class="font1 my-3 pt-5 text-center">Order History</h1>
   <table class="table table-hover text-center text-black-50">
     <thead>
     <tr>
@@ -16,12 +16,16 @@
     <tbody>
     <tr *ngFor="let history of OrderHistory">
       <td><img src="{{history.image}}" height="120px" width="130px"></td>
-      <td>{{history.name}}</td>
+      <td><b>{{history.name}}</b></td>
       <td>{{history.quantity}}</td>
-      <td>{{history.price}}</td>
+      <td class="text-danger"><b><i class="fa my-3">&#xf156;&nbsp;</i>{{history.price}}</b></td>
       <td>{{history.date}}</td>
       <td><button class="btn btn-success" (click)="checkDetails(history.productId)">See Details</button></td>
     </tr>
     </tbody>
   </table>
+
+  <button class="btn-success btn-lg mb-5 w-100" (click)="continueShopping()">Shop More <i class="fa p-1">&#xf290;&nbsp;</i></button>
+
 </div>
+<app-footer></app-footer>

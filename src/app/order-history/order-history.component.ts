@@ -19,4 +19,8 @@ export class OrderHistoryComponent implements OnInit {
   checkDetails(id) {
       this.router.navigate(['product-detail', id]);
   }
+
+  continueShopping() {
+    this.router.navigate(['products/all']);
+  }
 }

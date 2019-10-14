@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {RegistrationComponent} from '../registration/registration.component';
 import {RegistrationService} from '../registration.service';
 import {AuthenticationService} from '../authentication.service';
+import {ProductsService} from '../products.service';
+import {ProductClass} from '../ProductClass';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +14,11 @@ export class NavbarComponent implements OnInit {
 
   private role;
   private user;
-  constructor(private registrationService: RegistrationService, private loginService: AuthenticationService) { }
+  private searchedItem: string;
+  private products;
+  @Output() public childEvent = new EventEmitter();
+  constructor(private registrationService: RegistrationService, private loginService: AuthenticationService,
+              private productService: ProductsService) { }
 
   ngOnInit() {
     this.registrationService.getUser().subscribe( data => {
@@ -21,4 +27,11 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  /*searchOnClick() {
+    console.log(this.searchedItem);
+    // tslint:disable-next-line:triple-equals
+    if (this.searchedItem != null && this.searchedItem != '') {
+      this.productService.getSearchedResult(this.searchedItem).subscribe(data => this.products = data);
+    }
+  }*/
 }
