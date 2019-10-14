@@ -1,3 +1,31 @@
+
+<!--Lower navbar-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white mt-5 font1 fixed-top" style="box-shadow: 10px 2px 5px lightslategrey;">
+  <ul class="nav navbar-nav float-sm-left mr-auto ml-auto">
+
+    <li class="nav-item pr-5">
+      <a class="nav-link" href="home"><i class="fa p-1">&#xf015;</i>&nbsp;Home</a>
+    </li>
+    <li class="nav-item pr-5">
+      <a class="nav-link" href="products/all"><i class="fa p-1">&#xf111;</i>&nbsp;All Products</a>
+    </li>
+    <li class="nav-item pr-5">
+      <a class="nav-link" href="products/clothing"><i class="fa p-1">&#x553;</i>&nbsp;Clothing</a>
+    </li>
+    <li class="nav-item pr-5">
+      <a class="nav-link" href="products/footwear"><i class="fa p-1">&#x782;</i>&nbsp;Footwear</a>
+    </li>
+    <li class="nav-item pr-5">
+      <a class="nav-link" href="products/electronics"><i class="fa p-1">&#xf109;</i>&nbsp;Electronics</a>
+    </li>
+    <li class="nav-item pr-5">
+      <a class="nav-link" href="products/books"><i class="fa p-1">&#xf02d;</i>&nbsp;Books</a>
+    </li>
+  </ul>
+</nav>
+
+
 <!--Upper Navbar-->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
@@ -17,10 +45,13 @@
         <a class="nav-link dropdown-item text-dark" href="registration"><i class="fa p-1">&#xf2bb;&nbsp;</i>Sign Up</a>
       </div>
     </li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn() && this.role=='Admin'">
+      <a class="nav-link" href="addProduct"><i class="fa p-1">&#xf299;&nbsp;</i>Add Product</a>
+    </li>
     <li class="nav-item dropdown" *ngIf="loginService.isUserLoggedIn()">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa p-1">&#xf007;&nbsp;</i>Profile</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa p-1">&#xf007;&nbsp;</i>Your Account</a>
       <div class="dropdown-menu">
-        <a class="nav-link dropdown-item text-dark" href="myAccount"><i class="fa p-1">&#xf2bb;&nbsp;</i>My Account</a>
+        <a class="nav-link dropdown-item text-dark" href="myAccount"><i class="fa p-1">&#xf2bb;&nbsp;</i>Edit Profile</a>
         <a class="nav-link dropdown-item text-dark" href="logout"><i class="fa p-1">&#xf418;&nbsp;</i>Logout</a>
       </div>
     </li>
@@ -33,29 +64,5 @@
   </ul>
 </nav>
 
-
-<!--Lower navbar-->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white mt-5 font1 sticky-top" style="box-shadow: 10px 2px 5px lightslategrey">
-  <ul class="nav navbar-nav float-sm-left mr-auto ml-auto">
-
-    <li class="nav-item pr-5">
-      <a class="nav-link" routerLink="home"><i class="fa p-1">&#xf015;</i>&nbsp;Home</a>
-    </li>
-    <li class="nav-item pr-5">
-      <a class="nav-link" routerLink="products/all"><i class="fa p-1">&#xf111;</i>&nbsp;All Products</a>
-    </li>
-    <li class="nav-item pr-5">
-      <a class="nav-link" routerLink="products/clothing"><i class="fa p-1">&#x553;</i>&nbsp;Clothing</a>
-    </li>
-    <li class="nav-item pr-5">
-      <a class="nav-link" routerLink="products/footwear"><i class="fa p-1">&#x782;</i>&nbsp;Footwear</a>
-    </li>
-    <li class="nav-item pr-5">
-      <a class="nav-link" routerLink="products/electronics"><i class="fa p-1">&#xf109;</i>&nbsp;Electronics</a>
-    </li>
-    <li class="nav-item pr-5">
-      <a class="nav-link" routerLink="products/books"><i class="fa p-1">&#xf02d;</i>&nbsp;Books</a>
-    </li>
-  </ul>
-</nav>
+<div style="margin-top: 100px;">
+</div>

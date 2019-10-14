@@ -21,14 +21,20 @@ export class RegistrationComponent implements OnInit {
     name: string;
     password: string;
     role: string;
+    address: string;
   };
 
   ngOnInit() {
   }
   createUser() {
-    this.register.createUser(this.user).subscribe(data => {
+    if (this.user.email != null && this.user.gender != null && this.user.mobileNo != null && this.user.name != null
+      && this.user.password != null && this.user.address != null ) {
+      this.register.createUser(this.user).subscribe(data => {
         alert('User created successfully.');
         this.router.navigate(['login']);
       });
+    } else {
+      alert('Please fill all the details.');
+    }
   }
 }

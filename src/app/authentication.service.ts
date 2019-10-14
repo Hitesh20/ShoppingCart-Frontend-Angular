@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {Users} from './Users';
+import {Observable} from 'rxjs';
+import {RegistrationService} from './registration.service';
 
 export class User {
   status: string;
@@ -12,7 +15,10 @@ export class User {
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private registrationService: RegistrationService) { }
+
+  currentUser: Users;
+  public admin: boolean;
 
   /*authenticate(username, password) {
     if (username === 'hiteshmunjal22@gmail.com' && password === 'password') {
@@ -46,5 +52,11 @@ export class AuthenticationService {
   logOut() {
     sessionStorage.removeItem('username');
   }
-
+  /*isUserAdmin() {
+    this.registrationService.getUser().subscribe( data => this.currentUser = data);
+    if (this.currentUser.role === 'Admin') {
+      return true;
+    }
+    return false;
+  }*/
 }

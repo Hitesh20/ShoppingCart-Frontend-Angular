@@ -3,19 +3,19 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ProductsService} from '../products.service';
 import {CartService} from '../cart.service';
 import {AuthenticationService} from '../authentication.service';
+import {ProductClass} from '../ProductClass';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  selector: 'app-edit-product',
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.scss']
 })
-export class ProductDetailComponent implements OnInit {
+export class EditProductComponent implements OnInit {
 
   private productId;
   private product;
-  /*private inCart;*/
   constructor(private route: ActivatedRoute, private router: Router, private productService: ProductsService,
-              private cartService: CartService, private loginService: AuthenticationService) { }
+              private loginService: AuthenticationService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -27,10 +27,12 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getOneProduct(this.productId).subscribe(data => this.product = data);
   }
 
-  addThisProductToCart(id) {
-    this.cartService.addToCart(id).subscribe((data) =>
-     console.log(data));
-    /*this.inCart = true;*/
-    alert('Product added to cart.');
+  editProduct() {
+    console.log(this.product);
+    this.productService.editProductDetails(this.product).subscribe(data => {
+      this.product = data;
+      alert('Product Details updated successfully.');
+      this.router.navigate(['products/all']);
+    });
   }
 }

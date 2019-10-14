@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap} from '@angular/router';
-import {__param} from 'tslib';
-import {ProductsService} from '../products.service';
+import {RegistrationComponent} from '../registration/registration.component';
+import {RegistrationService} from '../registration.service';
 import {AuthenticationService} from '../authentication.service';
 
 @Component({
@@ -11,10 +10,15 @@ import {AuthenticationService} from '../authentication.service';
 })
 export class NavbarComponent implements OnInit {
 
-  private category;
-  constructor(private loginService: AuthenticationService) { }
+  private role;
+  private user;
+  constructor(private registrationService: RegistrationService, private loginService: AuthenticationService) { }
 
   ngOnInit() {
+    this.registrationService.getUser().subscribe( data => {
+      this.user = data;
+      this.role = this.user.role;
+    });
   }
 
 }

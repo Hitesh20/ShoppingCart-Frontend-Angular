@@ -22,6 +22,11 @@ import {RegistrationService} from './registration.service';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import {CartService} from './cart.service';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { NgxPopperModule} from 'ngx-popper';
+import {BsDropdownDirective, BsDropdownModule} from 'ngx-bootstrap';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 // @ts-ignore
 @NgModule({
@@ -38,12 +43,16 @@ import { MyAccountComponent } from './my-account/my-account.component';
     LogoutComponent,
     OrderHistoryComponent,
     MyAccountComponent,
+    PageNotFoundComponent,
+    AddProductComponent,
+    BsDropdownDirective,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     /*{

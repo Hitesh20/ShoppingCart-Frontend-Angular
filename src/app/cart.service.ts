@@ -36,5 +36,4 @@ export class CartService {
     return this.http.get(this.url + '/checkout', {headers});
 
   }
-
 }

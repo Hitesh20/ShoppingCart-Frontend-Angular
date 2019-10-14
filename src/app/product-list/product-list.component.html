@@ -1,4 +1,4 @@
-
+<app-navbar></app-navbar>
 <div class="container-fluid bg-light d-flex">
 
 
@@ -63,10 +63,13 @@
               <div><b class="card-title my-4">{{product.name}}</b></div>
               <p class="card-text"><i class="fa my-3">&#xf156;</i>{{product.price}}</p>
               <button class="btn btn-success btn-sm" (click)="addToCart(product.productId)">Add to Cart</button>&nbsp;&nbsp;
-              <button (click)="seeDetails(product)" class="btn btn-success btn-sm">See Product</button>
+              <button (click)="seeDetails(product)" class="btn btn-success btn-sm">See Product</button><br><br>
+
+              <button class="btn btn-danger btn-sm w-100" (click)="removeProduct(product)" *ngIf="loginService.isUserLoggedIn() && this.role=='Admin'" >Remove Product</button><br><br>
+
+              <button class="btn btn-warning btn-sm w-100" (click)="editProduct(product)" *ngIf="loginService.isUserLoggedIn() && this.role=='Admin'" >Edit Product</button>
             </div>
           </div>
-
 
     </div>
 

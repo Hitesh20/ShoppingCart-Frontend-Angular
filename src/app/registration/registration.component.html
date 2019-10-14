@@ -1,4 +1,5 @@
-<div class="container-fluid" id="grad">
+<app-navbar></app-navbar>
+<div class="container-fluid" id="grad" style="padding-bottom: 100px;">
 
 
   <div class="bg-white signupbox">
@@ -9,7 +10,7 @@
     <div class="container">
 
 
-      <form action="login" class="is-validated">
+      <form action="login" class="was-validated">
 
         <div class="form-group">
           <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" [(ngModel)]="user.name" required>
@@ -31,23 +32,22 @@
           <div class="valid-feedback">Valid.</div>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="address" placeholder="Enter Your Address" name="pswd" [(ngModel)]="user.address" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
         <b class="ml-1">I'm a:- </b>&nbsp;
-        <div class="form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" value="MALE" [(ngModel)]="user.gender" checked>Male
-          </label>
+        <div class="form-group">
+          <select [(ngModel)]="user.gender" class="form-control custom-select" name="gender" required>
+            <option >Male</option>
+            <option >Female</option>
+            <option >Transgender</option>
+          </select>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
         </div>
-        <div class="form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" value="FEMALE" [(ngModel)]="user.gender">Female
-          </label>
-        </div>
-        <div class="form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" value="TRANSGENDER" [(ngModel)]="user.gender">Transgender
-          </label>
-        </div>
-        <button type="submit" class="btn btn-info mt-5 mb-5 w-100" (click)="createUser()">REGISTER</button>
+        <button type="submit" class="btn btn-info mt-3 mb-3 w-100" (click)="createUser()">REGISTER</button>
       </form>
       <div class="pb-5 mr-1">
         <small>Already have an Account?<a href="login">Login here</a></small>

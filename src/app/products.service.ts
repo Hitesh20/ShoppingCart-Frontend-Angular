@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ProductClass} from './ProductClass';
 import {Observable} from 'rxjs';
+import {Users} from './Users';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,19 @@ export class ProductsService {
     return this.http.get<ProductClass[]>(this.url + '/products/' + price1 + '/' + price2, {headers});
   }
 
+  addProduct(product) {
+    const headers = new HttpHeaders({Authorization: sessionStorage.getItem('basicAuth')});
+    return this.http.post(this.url + '/addProduct', product, {headers});
+  }
 
+  removeFromDB(id) {
+    const headers = new HttpHeaders( {Authorization: sessionStorage.getItem('basicAuth')});
+    return this.http.get(this.url + '/products/' + id + '/delete', {headers});
+  }
 
+  editProductDetails(product) {
+    const headers = new HttpHeaders({Authorization: sessionStorage.getItem('basicAuth')});
+    return this.http.post<ProductClass>(this.url + '/editProduct' , product, {headers});
+  }
 }
 
