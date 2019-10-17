@@ -69,6 +69,7 @@ export class UserCartComponent implements OnInit {
   }
 
   checkOut() {
+    alert('Your order has been placed successfully. Thanks for shopping.');
     this.router.navigate(['home']);
   }
 }

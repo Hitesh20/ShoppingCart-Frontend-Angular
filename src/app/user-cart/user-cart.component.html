@@ -26,15 +26,15 @@
           <div *ngFor="let product of myProducts" class="row border-bottom" style="padding-bottom: 40px; padding-top: 20px;">
             
             <div class="col-sm-4 m-2">
-              <img src="{{product.products.image}}" height="310" width="250" class="img-thumbnail">
+              <img src="{{product.products.image}}" class="img-thumbnail" height="350px" width="280px" >
             </div>
             <div class="col-sm-7 m-2">
-              <div><b><h4 class="font2">{{product.products.name}}</h4></b></div>
+              <h2 class="font1">{{product.products.name}}</h2><br>
               <div><b>Quantity :-</b>&nbsp;
               <button class="btn btn-success"(click)="removeOneQuantity(product.products.productId)">-&nbsp;</button>
               &nbsp;<span class="badge badge-light">{{product.quantity}}</span>&nbsp;
-                <button class="btn btn-success" (click)="addOneQuantity(product.products.productId)">+&nbsp;</button></div>
-              <div><b>Price&nbsp;<i class="fa p-1">&#xf02b;</i>:-</b>&nbsp;<i class="fa p-1">&#xf156;</i><span class="font-weight-">{{product.products.price}}</span></div><hr>
+                <button class="btn btn-success" (click)="addOneQuantity(product.products.productId)">+&nbsp;</button></div><br>
+              <div><b>Price per Quantity&nbsp;<i class="fa p-1">&#xf02b;</i>:-</b>&nbsp;<i class="fa p-1">&#xf156;</i><span class="font-weight-">{{product.products.price}}</span></div><br><hr>
               <button class="btn btn-danger" (click)="removeProduct(product.products.productId)"><i class="fa p-1">&#xf1f8;&nbsp;</i>Remove</button>
               <a class="btn btn-success ml-5" href="products/all"><i class="fa p-1">&#xf07a;&nbsp;</i>Continue Shopping</a>
             </div>

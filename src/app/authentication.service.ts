@@ -51,6 +51,7 @@ export class AuthenticationService {
 
   logOut() {
     sessionStorage.removeItem('username');
+    sessionStorage.removeItem('basicAuth');
   }
   /*isUserAdmin() {
     this.registrationService.getUser().subscribe( data => this.currentUser = data);

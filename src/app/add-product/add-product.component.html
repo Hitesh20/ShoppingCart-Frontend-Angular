@@ -23,11 +23,14 @@
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>-->
 
-        <div class="text">
-          <input type="" class="form-control" id="image" placeholder="Enter Image Path" name="image" [(ngModel)]="product.image" required>
+        <div class="form-group">
+          <input type="text" class="form-control" id="image" placeholder="Enter Image Path" name="image" [(ngModel)]="product.image" required>
           <div class="valid-feedback">Valid.</div>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
+        <!--<div class="form-group">
+          <input type="file" (change)="onFileSelected($event)" class="form-control" name="image" required>
+        </div>-->
         <div class="form-group">
           <input type="text" class="form-control" id="price" placeholder="Enter Price" name="price" [(ngModel)]="product.price" required>
           <div class="valid-feedback">Valid.</div>
@@ -74,7 +77,8 @@
           </label>
         </div>-->
         <div class="form-group">
-        <select [(ngModel)]="product.category" class="form-control custom-select" name="category" required>
+        <select [(ngModel)]="product.category" class="form-control custom-select" name="category" placeholder="Select Category" required>
+          <option [selected] disabled>Select Category</option>
           <option >clothing</option>
           <option >footwear</option>
           <option >electronics</option>

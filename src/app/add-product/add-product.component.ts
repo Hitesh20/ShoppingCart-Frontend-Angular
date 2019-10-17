@@ -19,6 +19,7 @@ export class AddProductComponent implements OnInit {
     name: string;
     price: number;
   }
+  selectedFile: File = null;
   constructor(private productsService: ProductsService, private router: Router) { }
   ngOnInit() {
   }
@@ -36,5 +37,13 @@ export class AddProductComponent implements OnInit {
     } else {
       alert('Please fill all the details.');
     }
+  }
+
+  onFileSelected($event) {
+    this.selectedFile = $event.target.files[0] as File as File;
+    console.log(this.selectedFile);
+    const formData = new FormData();
+    formData.append('image', this.selectedFile, this.selectedFile.name);
+    // this.product.image = this.selectedFile;
   }
 }
