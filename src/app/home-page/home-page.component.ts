@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductListComponent } from '../product-list/product-list.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,7 +9,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

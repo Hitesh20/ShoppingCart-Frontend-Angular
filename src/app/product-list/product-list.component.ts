@@ -52,9 +52,13 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(id) {
+    if (this.loginService.isUserLoggedIn()) {
     this.cartService.addToCart(id).subscribe((data) =>
       console.log(data));
     alert('Product added to cart.');
+  } else {
+      alert('Please Login First');
+    }
   }
 
   removeProduct(product) {

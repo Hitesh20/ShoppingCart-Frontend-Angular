@@ -19,7 +19,7 @@
       <td><b>{{history.name}}</b></td>
       <td>{{history.quantity}}</td>
       <td class="text-danger"><b><i class="fa my-3">&#xf156;&nbsp;</i>{{history.price}}</b></td>
-      <td>{{history.date}}</td>
+      <td>{{history.date | date:'short'}}</td>
       <td><button class="btn btn-success" (click)="checkDetails(history.productId)">See Details</button></td>
     </tr>
     </tbody>

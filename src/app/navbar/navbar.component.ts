@@ -4,6 +4,7 @@ import {RegistrationService} from '../registration.service';
 import {AuthenticationService} from '../authentication.service';
 import {ProductsService} from '../products.service';
 import {ProductClass} from '../ProductClass';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,9 +15,11 @@ export class NavbarComponent implements OnInit {
 
   private role;
   private user;
+  private result;
   private searchedItem: string;
-  private products;
-  @Output() public childEvent = new EventEmitter();
+  private category;
+  @Output() private childEvent = new EventEmitter();
+  isOff: true;
   constructor(private registrationService: RegistrationService, private loginService: AuthenticationService,
               private productService: ProductsService) { }
 
@@ -27,11 +30,20 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  /*searchOnClick() {
+  searchOnClick() {
     console.log(this.searchedItem);
     // tslint:disable-next-line:triple-equals
-    if (this.searchedItem != null && this.searchedItem != '') {
-      this.productService.getSearchedResult(this.searchedItem).subscribe(data => this.products = data);
+    if (this.searchedItem != undefined && this.searchedItem != '') {
+      this.productService.getSearchedResult(this.searchedItem).subscribe(data => {
+        /*const object = {
+          result: undefined,
+          search: undefined
+        };
+        object.search = this.searchedItem;*/
+        this.result = data;
+        // this.products = data;
+        this.childEvent.emit(this.result);
+      });
     }
-  }*/
+  }
 }

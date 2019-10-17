@@ -28,9 +28,13 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addThisProductToCart(id) {
-    this.cartService.addToCart(id).subscribe((data) =>
-     console.log(data));
-    /*this.inCart = true;*/
-    alert('Product added to cart.');
+    if (this.loginService.isUserLoggedIn()) {
+      this.cartService.addToCart(id).subscribe((data) =>
+        console.log(data));
+      /*this.inCart = true;*/
+      alert('Product added to cart.');
+    } else {
+      alert('Please Login First.');
+    }
   }
 }

@@ -1,11 +1,12 @@
-<app-navbar></app-navbar>
-<div class="container-fluid bg-light d-flex">
+<app-navbar (childEvent)="this.products=$event"></app-navbar>
+<div class="container-fluid bg-light">
 
-
-      <div class="bg-white ml-1 mr-1 mt-4 position-fixed" style="width:24%;">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="bg-white mt-4 position-fixed" style="padding-right: 140px;">
         <h2 class="text-left ml-4 text-success font1 mt-3">Filters</h2>
-        <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
-        <div class="">
+        <hr>
+
           <h6 class=" text-left ml-4 mt-3">CATEGORIES</h6>
           <form class="form-check text-left ml-5 mt-3">
             <div class="mb-2">
@@ -29,7 +30,6 @@
               </label>
             </div>
           </form>
-        </div>
         <div class="mx-3" style="border-bottom:1px solid #b6a9c2 "></div>
         <h6 class=" text-left mt-3 ml-4">PRICE</h6>
         <form class="form-check text-left mt-3 ml-4 mb-4">
@@ -55,24 +55,30 @@
           </div>
         </form>
       </div>
-
-        <div class="d-flex flex-wrap p-1" style="width: 75%; margin-left: auto;">
-          <div class="card my-4 mx-2" style="width:23%;" *ngFor="let product of products">
-            <img class="card-img-top p-2 pt-4" src="{{product.image}}" alt="Card image" height="240px" width=100%>
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-12">
+        <div class="d-flex flex-wrap mt-4">
+          <div class="card m-2 p-3" *ngFor="let product of products" style="width:300px;">
+            <img class="card-img-top p-1" src="{{product.image}}" alt="Card image" height="240px" width="250px">
             <div class="card-body bg-white">
-              <div><b class="card-title my-4">{{product.name}}</b></div>
-              <p class="card-text"><i class="fa my-3">&#xf156;</i>{{product.price}}</p>
-              <button class="btn btn-success btn-sm" (click)="addToCart(product.productId)">Add to Cart</button>&nbsp;&nbsp;
-              <button (click)="seeDetails(product)" class="btn btn-success btn-sm">See Product</button><br><br>
-
+              <div class="text-center"><b class="card-title my-4">{{product.name}}</b></div>
+              <p class="card-text text-center"><i class="fa my-3">&#xf156;</i>{{product.price}}</p>
+              <button class="btn btn-success btn-sm w-100" (click)="addToCart(product.productId)"><i class="fa p-1">&#xf07a;&nbsp;</i>Add to Cart</button><br>&nbsp;
+              <button (click)="seeDetails(product)" class="btn btn-success btn-sm w-100"><i class="fa p-1">&#xf06e;&nbsp;</i>See Product</button><br><br>
               <button class="btn btn-danger btn-sm w-100" (click)="removeProduct(product)" *ngIf="loginService.isUserLoggedIn() && this.role=='Admin'" ><i class="fa p-1">&#xf1f8;&nbsp;</i>Remove Product</button><br><br>
-
               <button class="btn btn-warning btn-sm w-100" (click)="editProduct(product)" *ngIf="loginService.isUserLoggedIn() && this.role=='Admin'" ><i class="fa p-1">&#xf044;&nbsp;</i>Edit Product</button>
             </div>
           </div>
+        </div>
+        </div>
 
+      </div>
     </div>
 
-    </div>
+  </div>
+
+</div>
 <app-footer></app-footer>
 
