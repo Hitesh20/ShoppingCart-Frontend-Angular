@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
   }
 
   searchOnClick() {
-    console.log(this.searchedItem);
+    // console.log(this.searchedItem);
     // tslint:disable-next-line:triple-equals
     if (this.searchedItem != undefined && this.searchedItem != '') {
       this.productService.getSearchedResult(this.searchedItem).subscribe(data => {

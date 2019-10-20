@@ -40,6 +40,7 @@ export class AddProductComponent implements OnInit {
   }
 
   onFileSelected($event) {
+    const file = $event.target.files[0];
     this.selectedFile = $event.target.files[0] as File as File;
     console.log(this.selectedFile);
     const formData = new FormData();

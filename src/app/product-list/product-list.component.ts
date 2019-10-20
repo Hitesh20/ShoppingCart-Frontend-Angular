@@ -66,6 +66,9 @@ export class ProductListComponent implements OnInit {
       this.products = data;
       alert('Product Deleted Successfully');
     });
+    this.cartService.removeWholeProduct(product.productId).subscribe((data) => {
+      console.log(data);
+    });
   }
 
   editProduct(product) {

@@ -14,7 +14,7 @@
 
   <ul class="nav navbar-nav float-sm-right">
     <li class="nav-item dropdown" *ngIf="!loginService.isUserLoggedIn()">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa p-1">&#xf007;&nbsp;</i>Profile</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa p-1">&#xf007;&nbsp;</i>Profile</a>
       <div class="dropdown-menu">
         <a class="nav-link dropdown-item text-dark" href="login"><i class="fa p-1">&#xf118;&nbsp;</i>Login</a>
         <a class="nav-link dropdown-item text-dark" href="registration"><i class="fa p-1">&#xf2bb;&nbsp;</i>Sign Up</a>
@@ -24,7 +24,7 @@
       <a class="nav-link" href="addProduct"><i class="fa p-1">&#xf067;&nbsp;</i>Add Product</a>
     </li>
     <li class="nav-item dropdown" *ngIf="loginService.isUserLoggedIn()">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa p-1">&#xf007;&nbsp;</i>Your Account</a>
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa p-1">&#xf007;&nbsp;</i>Your Account</a>
       <div class="dropdown-menu">
         <a class="nav-link dropdown-item text-dark" href="myAccount"><i class="fa p-1">&#xf044;&nbsp;</i>Edit Profile</a>
         <a class="nav-link dropdown-item text-dark" href="logout"><i class="fa p-1">&#xf03b;&nbsp;</i>Logout</a>
